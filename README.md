@@ -109,7 +109,7 @@ to build the project.
 Now, we need to make the ros packages visible by running:
 
 ```
-source /src/devel/setup.bash 
+source ./devel/setup.bash 
 ```
 (This can also be added to ~/.bashrc, to avoid doing this in every new terminal. See the bottom of the README for all the changes made to the ~/.bashrc file)
 
