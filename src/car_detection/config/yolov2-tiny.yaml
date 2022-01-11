@@ -12,4 +12,5 @@ yolo_model:
       - motorbike
       - truck
 
+# NOT USED
 # Needs retrained model to work with only these labels.

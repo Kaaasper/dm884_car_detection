@@ -2,7 +2,7 @@
   <arg name="vehicle" value="iris_fpv_cam"/>
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find px4)/launch/posix_sitl.launch">
-    <arg name="world" value="$(find testdrone_gazebo)/worlds/testdrone.world"/>
+    <arg name="world" value="$(find car_detection)/worlds/car_detection.world"/>
     <arg name="x" value="-283.483643"/>
     <arg name="y" value="-15.145508"/>
     <arg name="z" value="1"/>
@@ -14,10 +14,7 @@
   <include file="$(find darknet_ros)/launch/darknet_ros.launch">
     <arg name="image" default="/iris/usb_cam/image_raw" />
 
-    <!--arg name="network_param_file" value="$(find testdrone_gazebo)/config/yolov2-tiny.yaml"/-->
     <!-- more default parameters can be changed here -->
   </include>
- <!--DOES NOT WORK. May even break stuff.-->
-  
-  <!--<node name="cargolf_spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find gazebo_cars)/models/car_golf/model.sdf -sdf -z 1 -model cargolf" />-->
+
 </launch>
