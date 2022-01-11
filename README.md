@@ -119,9 +119,9 @@ Launch MAVROS by running:
 roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 ```
 
-In a new terminal, launch the project .launch file called testdrone.launch by running:
+In a new terminal, launch the project .launch file called car_detection.launch by running:
 ```
-roslaunch testdrone_gazebo testdrone.launch
+roslaunch car_detection car_detection.launch
 ```
 NOTE: The above command does not work without sourcing px4 as shown earlier. This needs to be done in every terminal using px4. Not just once in any terminal.
 
