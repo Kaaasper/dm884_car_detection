@@ -80,18 +80,15 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo
 ```
 (This can also be added to ~/.bashrc, to avoid doing this on every new terminal. See the bottom of the README for all the changes made to the ~/.bashrc file)
 
-Now, we can run
+Now, to launch MAVROS, we can run
 ```
 roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 ```
-
-to launch mavros, and we can run
+To launch gazebo with a drone using roslaunch, in a new terminal, we can run:
 
 ```
 roslaunch px4 posix_sitl.launch
 ```
-to launch gazebo with a drone using roslaunch.
-
 
 ## Using these components with our own project
 ### Preparing the project
@@ -117,27 +114,37 @@ source /src/devel/setup.bash
 (This can also be added to ~/.bashrc, to avoid doing this in every new terminal. See the bottom of the README for all the changes made to the ~/.bashrc file)
 
 ### Running the project
-Launch the project .launch file called testdrone.launch by running:
-```
-roslaunch testdrone_gazebo testdrone.launch
-```
-
-NOTE: The above command does not work without sourcing px4 as shown earlier. This needs to be done in every terminal using px4. Not just once in any terminal.
-
 Launch MAVROS by running:
 ```
 roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 ```
 
-Navigate to /dm844_car_detection/src/scripts and run:
+In a new terminal, launch the project .launch file called testdrone.launch by running:
 ```
-python3 mission_test.py MC_mission_box.plan
+roslaunch testdrone_gazebo testdrone.launch
 ```
+NOTE: The above command does not work without sourcing px4 as shown earlier. This needs to be done in every terminal using px4. Not just once in any terminal.
+
+
+In a new terminal, navigate to /dm844_car_detection/src/scripts and run:
+```
+python3 mission_test.py car_detection_flight.plan
+```
+It may be necessary to install a few Python modules, such as px4tools before running the mission. Just install them along the way, if the mission fails, and it prompts you to.
 
 This will launch a drone mission which should fly across the parking lot, while pointing at the cars. At the same time, it should launch darknet_ros, which opens a window that shows the detected objects, as well as a terminal that lists the objects and a percentage of how sure it is of its recognition. 
 
+To record the mission, in a new terminal, run:
+```
+mkdir bagfiles
+cd bagfiles
+rosbag record /darknet_ros/detection_image
+```
+
+When the drone has landed, stop the recording by typing ctrl+C.
+
 # .bashrc additions
-The bottom of my ~/.bashrc looks like this:
+To provide an example, my ~/.bashrc looks like this:
 ```
 source /opt/ros/noetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
