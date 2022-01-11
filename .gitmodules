@@ -1,0 +1,6 @@
+[submodule "src/darknet_ros"]
+	path = src/darknet_ros
+	url = https://github.com/leggedrobotics/darknet_ros.git
+[submodule "src/sitl_gazebo"]
+	path = src/sitl_gazebo
+	url = https://github.com/PX4/sitl_gazebo.git

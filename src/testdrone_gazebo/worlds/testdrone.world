@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://prius_hybrid</uri>
+      <name>prius</name>
+      <pose>-288.132342 -5.561424 1 0 0 0.420509</pose>
+    </include>
+    <include>
+      <uri>model://prius_hybrid</uri>
+      <name>prius 2</name>
+      <pose>-293.132342 -6.881424 1 0 0 0.410509</pose>
+    </include>
+    <include>
+      <uri>model://polaris_ranger_ev</uri>
+      <name>polaris_ranger_ev</name>
+      <pose>-298.989606 -10.297946 1 0 0 -1.111598</pose>
+    </include>
+    <include>
+      <uri>model://polaris_ranger_xp900</uri>
+      <name>polaris_ranger_xp900</name>
+      <pose>-307.104205 -14.236017 1 0 0 -1.176777</pose>
+    </include>
+    <include>
+      <uri>model://prius_hybrid</uri>
+      <name>prius 3</name>
+      <pose>-313.008036 -17.116078 1 0 0 0.378564</pose>
+    </include>
+    <include>
+      <uri>model://suv</uri>
+      <name>suv</name>
+      <pose>-320.834442 -21.629978 1 0 0 -1.059619</pose>
+    </include>
+    <include>
+      <uri>model://baylands</uri>
+      <name>baylands</name>
+      <pose>-2.0 7.0 0 0 0 0</pose>
+    </include>
+  </world>
+</sdf>
