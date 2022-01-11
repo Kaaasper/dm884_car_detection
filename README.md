@@ -128,8 +128,9 @@ NOTE: The above command does not work without sourcing px4 as shown earlier. Thi
 
 In a new terminal, navigate to /dm844_car_detection/src/scripts and run:
 ```
-python3 mission_test.py MC_mission_box.plan
+python3 mission_test.py car_detection_flight.plan
 ```
+It may be necessary to install a few Python modules, such as px4tools before running the mission. Just install them along the way, if the mission fails, and it prompts you to.
 
 This will launch a drone mission which should fly across the parking lot, while pointing at the cars. At the same time, it should launch darknet_ros, which opens a window that shows the detected objects, as well as a terminal that lists the objects and a percentage of how sure it is of its recognition. 
 
